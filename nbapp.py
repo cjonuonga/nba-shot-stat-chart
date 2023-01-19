@@ -32,7 +32,7 @@ import mplcursors as mpc
 
 
 p_name = input("Enter Player Name: ")
-fig1 = plt.figure(p_name + "'s game stats")
+fig1 = plt.figure(p_name + "'s postseason game stats")
 
 hooper = players.find_players_by_full_name(p_name)
 
@@ -67,7 +67,7 @@ g_id = input("Enter Game ID: ")
 
 
 
-player_info2 = cumestatsplayer.CumeStatsPlayer(game_ids=g_id, league_id=LeagueID.default, player_id=p_id, season=season_id, season_type_all_star=SeasonTypeAllStar.default)
+player_info2 = cumestatsplayer.CumeStatsPlayer(game_ids=g_id, league_id=LeagueID.default, player_id=p_id, season=season_id, season_type_all_star='Playoffs')
 
 pts = player_info2.get_data_frames()[0]['PTS']
 ast = player_info2.get_data_frames()[0]['AST']
@@ -142,7 +142,7 @@ def player_shotchart():
 
     hoopestshotlist = shotchartdetail.ShotChartDetail(game_id_nullable=game_ids,team_id=int(team_id),
                                               player_id=hooper_id,
-                                              season_type_all_star='Regular Season',
+                                              season_type_all_star='Playoffs',
                                               season_nullable=season_id,
                                               context_measure_simple="FGA").get_data_frames()
 
